@@ -31,6 +31,11 @@ class RpnKalkulatorShould {
         assertTrue("5 3 4" == rpnKalkualtor.calcule("7 2 - 3 4"))
     }
 
+    @Test
+    fun make_multiple_operator_division_plus_minus() {
+        assertTrue("1" == rpnKalkualtor.calcule("1 7 2 4 * 6 + / -"))
+    }
+
     @Before
     fun setUp() {
         rpnKalkualtor = RpnKalkulator()
