@@ -1,8 +1,7 @@
 class RpnKalkulator {
-    fun calcule(i: String): Int {
+    fun calcule(i: String): String {
         val input = i.split(" ")
         val arrayNumbers = arrayListOf<Int>()
-        val operators = arrayListOf<String>()
 
         input.forEach {
             try {
@@ -12,8 +11,8 @@ class RpnKalkulator {
                 val resultOperation = when (it) {
                     "/" -> arrayNumbers[0].div(arrayNumbers[1])
                     "-" -> arrayNumbers[0].minus(arrayNumbers[1])
-                    "+" -> arrayNumbers[arrayNumbers.size-2].plus(arrayNumbers[arrayNumbers.size-1])
-                    "*" -> arrayNumbers[arrayNumbers.size-1].times(arrayNumbers[arrayNumbers.size-2])
+                    "+" -> arrayNumbers[arrayNumbers.size - 2].plus(arrayNumbers[arrayNumbers.size - 1])
+                    "*" -> arrayNumbers[arrayNumbers.size - 1].times(arrayNumbers[arrayNumbers.size - 2])
                     else -> arrayNumbers[0]
                 }
 
@@ -23,7 +22,7 @@ class RpnKalkulator {
             }
         }
 
-        return arrayNumbers[0]
+        return arrayNumbers.joinToString(" ")
     }
 }
 
