@@ -1,0 +1,31 @@
+group 'rpn-kalkulator-kata'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    ext.kotlin_version = '1.1.2-2'
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+apply plugin: 'kotlin'
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    final def junitVersion = '4.12'
+    final def assertJVersion = '3.8.0'
+    final def mockitoVersion = '2.8.9'
+
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
+    testCompile group: 'junit', name: 'junit', version: junitVersion
+    testCompile group: 'org.assertj', name: 'assertj-core', version: assertJVersion
+    testCompile group: 'org.mockito', name: 'mockito-core', version: mockitoVersion
+}
