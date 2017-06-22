@@ -1,18 +1,24 @@
 import org.junit.Assert
+import org.junit.Before
 import org.junit.Test
 
 class RpnKalkulatorShould {
 
     @Test
     fun display_same_digit_sent() {
-
         val rpnKalkualtor = RpnKalkulator()
 
-        Assert.assertTrue(4 == rpnKalkualtor.calcule(4))
+        Assert.assertTrue(4 == rpnKalkualtor.calcule("4"))
     }
 
     @Test
     fun divide_to_two_digits() {
-        Assert.assertTrue(true)
+        val rpnKalkualtor = RpnKalkulator()
+
+        Assert.assertTrue(4 == rpnKalkualtor.calcule("20 5 /"))
+    }
+
+    @Before
+    fun setUp() {
     }
 }
